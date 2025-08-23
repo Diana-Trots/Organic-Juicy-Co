@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Secular One";
+  src: url("fonts/SecularOne-Regular.ttf") format("TrueType");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("fonts/PTSans-Regular.ttf") format("TrueType");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fira Sans Condensed";
+  src: url("fonts/FiraSansCondensed-Light.ttf") format("TrueType");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fira Sans Condensed";
+  src: url("fonts/FiraSansCondensed-Regular.ttf") format("TrueType");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fira Sans Condensed";
+  src: url("fonts/FiraSansCondensed-Black.ttf") format("TrueType");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* 
+font-family: "Secular One", sans-serif;
+font-weight: 400;
+font-family: "PT Sans", sans-serif;
+font-weight: 400;
+font-family: "Fira Sans Condensed", sans-serif;
+font-weight: 300;
+font-family: "Fira Sans Condensed", sans-serif;
+font-weight: 400;
+font-family: "Fira Sans Condensed", sans-serif;
+font-weight: 900;
+*/
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ------------------ HEADER -------------------- */
+
+.header {
+  display: grid;
+  grid-template: "logo nav search" max-content / 1fr 1fr 100px;
+  align-items: center;
+  justify-items: start;
+
+  padding: 20px 0;
+  overflow: hidden;
+
+  text-transform: uppercase;
+}
+
+.logo {
+  grid-area: logo;
+  justify-self: end;
+
+  width: 150px;
+
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  color: #ff2a3c;
+
+  transition: color 0.8s;
+
+  user-select: none;
+}
+
+.header__nav {
+  grid-area: nav;
+}
+
+.header__nav ul {
+  display: flex;
+  gap: 15px;
+}
+
+.header__nav ul a {
+  display: inline-block;
+  position: relative;
+  padding: 15px;
+  transition: color 0.8s;
+}
+
+.header__nav ul a:hover,
+.logo:hover {
+  color: #00c0b6;
+}
+
+.header__nav ul a:active {
+  color: #02625d;
+}
+
+.header__nav ul a::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: -150%;
+  display: block;
+  width: 80%;
+  height: 100%;
+  background-color: #00c0b6;
+
+  transition: bottom 0.8s, background-color 0.8s;
+}
+
+.header__nav ul a:hover::after {
+  bottom: -80%;
+}
+
+.header__nav ul a:active::after {
+  background-color: #02625d;
+}
+
+.header__search {
+  grid-area: search;
+}
+
+.header__search svg {
+  width: 35px;
+  height: 35px;
+  fill: #000;
+  transition: fill 0.8s;
+}
+
+.header__search svg:hover {
+  fill: #00c0b6;
+}
+
+.header__search svg:active {
+  fill: #02625d;
+}
