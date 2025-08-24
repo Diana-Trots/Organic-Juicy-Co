@@ -55,7 +55,6 @@ body {
 .container {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
 /* ------------------ HEADER -------------------- */
@@ -64,7 +63,7 @@ body {
   display: grid;
   /* grid-template: "logo nav search" max-content / 1fr 1fr 100px; */
 
-  grid-template: "empty logo nav search" max-content / 2fr 1fr 2.4fr 0.6fr;
+  grid-template: ". logo nav search" max-content / 2fr 1fr 2.5fr 0.5fr;
 
   /* 2fr 1fr 1.3fr 1.7fr */
   align-items: center;
@@ -142,8 +141,7 @@ body {
 
 .header__search {
   grid-area: search;
-  justify-self: end;
-  padding-right: 40px;
+  justify-self: start;
 }
 
 .header__search svg {
@@ -270,11 +268,12 @@ main {
 .slider-dots__nav {
   position: absolute;
   left: 0;
-  bottom: 10%;
+  bottom: 50px;
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 10px;
+  transform: translateY(25%);
 }
 
 .slider-dots__nav-item {
@@ -296,5 +295,124 @@ main {
 }
 
 .slider-dots__nav-item:active {
+  opacity: 0.6;
+}
+
+/* ------------------ COMMON -------------------- */
+
+.freshy {
+  grid-area: freshy;
+  background-color: #bbe955;
+}
+
+.healthy {
+  grid-area: healthy;
+  background-color: #ff2a3c;
+}
+
+.thirsty {
+  grid-area: thirsty;
+  background-color: #ffb121;
+}
+
+.common {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 30px 30px 50px 30px;
+}
+
+.common__wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.common--col-reverse .common__wrapper {
+  flex-direction: column-reverse;
+  gap: 25px;
+}
+
+.common--row-reverse .common__wrapper {
+  flex-direction: row-reverse;
+  gap: 40px;
+}
+
+.title {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 24px;
+  width: 140px;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  align-items: flex-end;
+  margin-bottom: -9px;
+}
+
+.title span {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.title span::first-line {
+  font-weight: 900;
+}
+
+.common__desc {
+  hyphens: auto;
+  max-width: 200px;
+}
+
+.common--row-reverse .common__desc {
+  text-align: right;
+}
+
+/* ------------------ ORANGE -------------------- */
+
+.orange {
+  position: relative;
+  grid-area: orange;
+}
+.orange__btn-wrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.orange > img {
+  filter: brightness(80%);
+  width: 100%;
+  height: 100%;
+}
+.btn {
+}
+.orange__btn {
+}
+.orange__nav {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  transform: translateY(25%);
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-right: 40px;
+}
+
+.orange__arrow {
+  transition: opacity 0.4s;
+}
+
+.orange__arrow:hover {
+  opacity: 0.8;
+}
+
+.orange__arrow:active {
   opacity: 0.6;
 }
