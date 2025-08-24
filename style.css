@@ -390,10 +390,7 @@ main {
   width: 100%;
   height: 100%;
 }
-.btn {
-}
-.orange__btn {
-}
+
 .orange__nav {
   position: absolute;
   left: 0;
@@ -415,4 +412,166 @@ main {
 
 .orange__arrow:active {
   opacity: 0.6;
+}
+
+/* ------------------ WRAPPER-DOWN -------------------- */
+
+.wrapper-down {
+  display: grid;
+  grid-template:
+    "footer sidebar" 1fr
+    / 4.3fr 1.7fr;
+}
+
+/* ------------------ FOOTER -------------------- */
+
+.footer {
+  grid-area: footer;
+  background-color: #2f2f2f;
+  color: #fff;
+
+  padding-top: 150px;
+
+  display: grid;
+  grid-template:
+    ". socials form . logo" max-content
+    ". . . . copy" 100px
+    / 0.5fr 1.5fr 1fr 0.3fr 1fr;
+}
+
+.socials {
+  grid-area: socials;
+  display: flex;
+  gap: 20px;
+  align-items: end;
+}
+
+.socials__link {
+  transition: opacity 0.4s;
+}
+
+.socials__link:hover {
+  opacity: 0.8;
+}
+
+.socials__link:active {
+  opacity: 0.6;
+}
+
+.socials__link img {
+  width: 40px;
+  height: 40px;
+}
+
+.form {
+  grid-area: form;
+  align-items: end;
+
+  text-transform: uppercase;
+}
+
+.form__title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+.form__row {
+  display: flex;
+}
+
+.form__input {
+  height: 40px;
+  width: 65%;
+  padding: 0 20px;
+  background-color: rgb(255, 255, 255, 0.6);
+}
+
+.form__input:focus {
+  background-color: #fff;
+}
+
+.form__submit {
+  height: 40px;
+  width: 35%;
+  background-color: #00c0b6;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+
+  transition: background-color 0.6s;
+}
+
+.form__submit:hover {
+  background-color: #11dad0;
+}
+.form__submit:active {
+  background-color: #015f5a;
+}
+
+.logo-img {
+}
+
+.footer__logo {
+  grid-area: logo;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(10px);
+  align-self: end;
+}
+
+.footer__logo:hover {
+  opacity: 0.7;
+}
+
+.copy {
+  grid-area: copy;
+  color: #999999;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+/* ------------------ SIDEBAR -------------------- */
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #00c0b6;
+  align-items: start;
+  padding: 50px 30px 30px 30px;
+}
+
+.common {
+}
+
+.common__wrapper {
+}
+
+.title {
+}
+
+.sidebar .common__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar .btn {
+}
+
+.btn--rounded {
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 25px;
+}
+
+@media (max-width: 1500px) {
+  .footer {
+    grid-template:
+      ". socials form logo" max-content
+      ". . . copy" 100px
+      / 0.5fr 1.5fr 1.3fr 1fr;
+  }
 }
