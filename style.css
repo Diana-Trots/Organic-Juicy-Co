@@ -61,7 +61,6 @@ body {
 
 .header {
   display: grid;
-  /* grid-template: "logo nav search" max-content / 1fr 1fr 100px; */
 
   grid-template: ". logo nav search" max-content / 2fr 1fr 2.5fr 0.5fr;
 
@@ -558,6 +557,64 @@ main {
   border-radius: 25px;
 }
 
+/* ------------------ БУРГЕР МЕНЮ -------------------- */
+
+.menu-icon {
+  width: 40px;
+  height: 30px;
+
+  display: none;
+
+  position: relative;
+}
+
+.menu-icon::after,
+.menu-icon::before {
+  content: "";
+  width: 100%;
+
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::after {
+  bottom: 0;
+
+  transition: bottom 0.4s 0.3s, transform 0.4s;
+}
+.menu-icon::before {
+  top: 0;
+  transition: top 0.4s 0.3s, transform 0.4s;
+}
+
+.menu-icon__line,
+.menu-icon::after,
+.menu-icon::before {
+  display: block;
+  height: 3px;
+  background-color: #000;
+}
+
+.menu-icon--active .menu-icon__line {
+  display: none;
+}
+
+.menu-icon--active::before {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+
+  transition: top 0.4s, transform 0.4s 0.3s;
+}
+
+.menu-icon--active::after {
+  transform: translateY(50%) rotate(-45deg);
+  bottom: 50%;
+
+  transition: bottom 0.4s, transform 0.4s 0.3s;
+}
+
+/* ------------------ МЕДИА ЗАПРОСЫ -------------------- */
+
 @media (max-width: 1500px) {
   .footer {
     grid-template:
@@ -662,6 +719,51 @@ main {
 
 @media (max-width: 780px) {
   .header__nav {
+    display: none;
+  }
+
+  header {
+    grid-template: "logo menu-icon" max-content / max-content max-content !important;
+  }
+
+  .menu-icon {
+    display: block;
+    grid-area: menu-icon;
+  }
+
+  .header__search {
+    display: none;
+  }
+  .header--mobile {
+    min-height: 100vh;
+    grid-template:
+      "logo menu-icon" max-content
+      "nav nav" max-content
+      "search search" max-content / max-content max-content !important;
+    align-content: space-between;
+    gap: 30px;
+  }
+
+  .header--mobile .header__search {
+    display: block;
+    justify-self: center;
+  }
+
+  .header--mobile .header__nav {
+    display: block;
+    justify-self: center;
+  }
+
+  .header__nav ul a::after {
+    display: none;
+  }
+
+  .header__nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header--mobile ~ * {
     display: none;
   }
 }
