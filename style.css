@@ -735,7 +735,7 @@ main {
     display: none;
   }
   .header--mobile {
-    min-height: 100vh;
+    min-height: 100svh;
     grid-template:
       "logo menu-icon" max-content
       "nav nav" max-content
