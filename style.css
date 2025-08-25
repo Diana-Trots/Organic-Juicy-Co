@@ -575,13 +575,6 @@ main {
 
 @media (max-width: 1200px) {
   main {
-    display: grid;
-    /* grid-template-rows: 3fr 1fr 3fr;
-  grid-template-columns: 2fr 1fr 1.3fr 1.7fr;
-  grid-template-areas:
-    "slider-arrows healthy thirsty thirsty"
-    "slider-arrows healthy slider-dots orange"
-    "freshy healthy slider-dots orange"; */
     grid-template:
       "freshy freshy healthy" auto
       "slider-arrows slider-arrows healthy" auto
@@ -610,7 +603,7 @@ main {
 
   .common {
     align-items: center;
-    padding: 40px 0;
+    padding: 40px 15px;
   }
 
   .thirsty {
@@ -639,7 +632,99 @@ main {
     justify-content: space-between;
   }
 
-  .header__search {
-    justify-self: end;
+  .header__nav {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 950px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    grid-template:
+      "socials" max-content
+      "form" max-content
+      "logo" max-content
+      "copy" max-content
+      / 50%;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .copy {
+    grid-area: copy;
+    color: #999999;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 0px;
+  }
+}
+
+@media (max-width: 780px) {
+  .header__nav {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    grid-template:
+      "healthy" auto
+      "slider-arrows" auto
+      "freshy" auto
+      "slider-dots" auto
+      "thirsty" auto
+      "orange" auto
+      / 1fr;
+  }
+
+  .common--col-reverse .common__wrapper {
+    flex-direction: row-reverse;
+  }
+
+  /* .thirsty,
+  .sidebar {
+    padding: 40px 15px;
+  } */
+
+  .common {
+    padding: 20px 15px;
+  }
+
+  .footer {
+    grid-template-columns: 70%;
+  }
+
+  .title {
+    margin-bottom: 0;
+  }
+
+  .common__wrapper {
+    gap: 15px;
+  }
+
+  .common--row-reverse .common__wrapper {
+    gap: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .common__desc {
+    max-width: unset;
+  }
+
+  .thirsty .title {
+    width: unset;
+  }
+}
+
+@media (max-width: 390px) {
+  body {
+    font-size: 12px;
+  }
+
+  .footer {
+    grid-template-columns: 80%;
+    gap: 20px;
+    padding: 40px 0 15px;
   }
 }
