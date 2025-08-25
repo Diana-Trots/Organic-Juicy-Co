@@ -46,6 +46,14 @@ font-family: "Fira Sans Condensed", sans-serif;
 font-weight: 900;
 */
 
+.hide {
+  display: none;
+}
+
+.unvisible {
+  visibility: hidden;
+}
+
 body {
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
@@ -57,6 +65,25 @@ body {
   margin: 0 auto;
 }
 
+.orange > img,
+.slider-arrows__item,
+.slider-dots__item {
+  height: 400px;
+}
+
+.slider-arrows__item,
+.slider-dots__item {
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* ------------------ HEADER -------------------- */
 
 .header {
@@ -633,14 +660,15 @@ main {
 @media (max-width: 1200px) {
   main {
     grid-template:
-      "freshy freshy healthy" auto
+      "freshy freshy healthy" 1fr
       "slider-arrows slider-arrows healthy" auto
       "thirsty thirsty thirsty" auto
       "slider-dots orange orange" auto
       / 3fr 1fr 2fr;
   }
 
-  .slider-dots,
+  .slider-arrows__item,
+  .slider-dots__item,
   .orange {
     height: 300px;
   }
