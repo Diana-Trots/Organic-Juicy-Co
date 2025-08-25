@@ -634,8 +634,9 @@ main {
   }
 
   .header {
-    grid-template: "logo nav search" max-content / 1fr 2fr 100px;
+    grid-template: "logo nav search" max-content / max-content max-content max-content;
     padding: 20px 30px;
+    justify-content: space-between;
   }
 
   .header__search {
