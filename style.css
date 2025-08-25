@@ -341,7 +341,7 @@ main {
 .title {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 24px;
-  width: 140px;
+  width: 130px;
   font-weight: 300;
   line-height: 1;
   text-transform: uppercase;
@@ -395,7 +395,7 @@ main {
   position: absolute;
   left: 0;
   bottom: 50px;
-  transform: translateY(25%);
+  transform: translateY(50%);
   width: 100%;
   display: flex;
   justify-content: right;
@@ -543,15 +543,6 @@ main {
   padding: 50px 30px 30px 30px;
 }
 
-.common {
-}
-
-.common__wrapper {
-}
-
-.title {
-}
-
 .sidebar .common__desc {
   display: flex;
   flex-direction: column;
@@ -573,5 +564,81 @@ main {
       ". socials form logo" max-content
       ". . . copy" 100px
       / 0.5fr 1.5fr 1.3fr 1fr;
+  }
+}
+
+@media (max-width: 1250px) {
+  .sidebar .common__desc {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    display: grid;
+    /* grid-template-rows: 3fr 1fr 3fr;
+  grid-template-columns: 2fr 1fr 1.3fr 1.7fr;
+  grid-template-areas:
+    "slider-arrows healthy thirsty thirsty"
+    "slider-arrows healthy slider-dots orange"
+    "freshy healthy slider-dots orange"; */
+    grid-template:
+      "freshy freshy healthy" auto
+      "slider-arrows slider-arrows healthy" auto
+      "thirsty thirsty thirsty" auto
+      "slider-dots orange orange" auto
+      / 3fr 1fr 2fr;
+  }
+
+  .slider-dots,
+  .orange {
+    height: 300px;
+  }
+
+  .slider-arrows__item,
+  .slider-dots__item,
+  .orange > img {
+    width: 100%;
+  }
+
+  .wrapper-down {
+    grid-template:
+      "sidebar" auto
+      "footer" auto
+      / auto;
+  }
+
+  .common {
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .thirsty {
+    padding: 40px 80px 40px 0;
+  }
+
+  .sidebar {
+    padding: 40px 0 40px 100px;
+  }
+
+  .footer {
+    padding-top: 100px;
+    grid-template:
+      "socials form logo" max-content
+      ". . copy" 100px
+      / 2fr 2fr 2fr;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .header {
+    grid-template: "logo nav search" max-content / 1fr 2fr 100px;
+    padding: 20px 30px;
+  }
+
+  .header__search {
+    justify-self: end;
   }
 }
